@@ -1,18 +1,15 @@
-import { AuthController } from "./Controllers/AuthController.js";
-import CommentsController from "./Controllers/CommentsController.js";
-import FightsController from "./Controllers/FightsController.js";
-import UsersController from "./Controllers/UsersController.js";
-import ValuesController from "./Controllers/ValuesController.js";
+import { AuthController } from './Controllers/AuthController.js'
+import CommentsController from './Controllers/CommentsController.js'
+import FightsController from './Controllers/FightsController.js'
+import ProfilesController from './Controllers/ProfilesController.js'
 
 class App {
   authController = new AuthController();
 
-  //client controllers
-  usersController = new UsersController();
+  // client controllers
+  profilesController = new ProfilesController();
   commentsController = new CommentsController();
   fightsController = new FightsController();
-
-
 }
 
-window["app"] = new App();
+window.app = new App()
