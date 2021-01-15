@@ -16,11 +16,17 @@
 </head>
 
 <body class="darken container-fluid">
-    <header class="text-center sticky-top">
+    <header class="container-fluid text-center sticky-top">
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light titlefont text-center sticky-top p-0"
             style="opacity: .5">
             <div class="col text-center justify-content-center">
                 <h1 class="titleFont text-center">Who Would Win?</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col text-center">
+                    <button class="btn btn-outline text-light titleFont"onclick="">Create Fight</button>
+                    <button class="btn btn-outline text-light titleFont"onclick="">View Fight</button>
+                </div>
             </div>
             <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
         </nav>
@@ -113,7 +119,7 @@
                       </button>
                 </div>
                 <div class="col-6 ">
-                    <button type="button" class="btn btn-outline text-success" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-outline text-success" data-toggle="modal" data-target="#viewrightComments">
                         <h3 class="titleFont text-success"onclick=>View Comments</h3>
                       </button>
                 </div>
@@ -121,6 +127,87 @@
         </div>
         </div>
         <div class="modal fade" id="viewleftComments" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title titleFont" id="exampleModalLongTitle">Comments</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p class = "font-italic fontweight-bolder">
+                      Sort By New /<span>Top</span>
+                  </p>
+                  <div class="cardTop my-2 mr-5">
+                            <div class="col mt-2 p-2">
+                                <img src="https://i.pinimg.com/originals/d7/f3/9a/d7f39a272198d52d27f35af847a9c26c.jpg"
+                                class="img-thumbnail m-2" style="max-width:100px; max-height:100px; float:left">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nihil modi,
+                                    corrupti
+                                    vero,
+                                    harum nulla cum tempore sequi vel nobis quo iste expedita doloremque fugit
+                                    laborum
+                                    cumque similique? Beatae, maxime!<span class="float-right">5</span><span> <i class="fas fa-arrow-alt-circle-up text-success float-right m-2"></i></span><span> <i class="fas fa-arrow-alt-circle-down text-danger float-right m-2"></i></span><span><i class="fas fa-heart text-warning float-right m-2"></i></span></p>
+                            </div>
+                        </div>
+                        <div class="cardTop my-2 mr-5">
+                            <div class="col mt-2 p-2">
+                                <img src="https://i.pinimg.com/originals/d7/f3/9a/d7f39a272198d52d27f35af847a9c26c.jpg"
+                                class="img-thumbnail m-2" style="max-width:100px; max-height:100px; float:left">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nihil modi,
+                                    corrupti
+                                    vero,
+                                    harum nulla cum tempore sequi vel nobis quo iste expedita doloremque fugit
+                                    laborum
+                                    cumque similique? Beatae, maxime!<span class="float-right">5</span><span> <i class="fas fa-arrow-alt-circle-up text-success float-right m-2"></i></span><span> <i class="fas fa-arrow-alt-circle-down text-danger float-right m-2"></i></span><span><i class="fas fa-heart text-warning float-right m-2"></i></span></p>
+                            </div>
+                        </div>
+                        <div class="cardTop my-2 mr-5">
+                            <div class="col mt-2 p-2">
+                                <img src="https://i.pinimg.com/originals/d7/f3/9a/d7f39a272198d52d27f35af847a9c26c.jpg"
+                                class="img-thumbnail m-2" style="max-width:100px; max-height:100px; float:left">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nihil modi,
+                                    corrupti
+                                    vero,
+                                    harum nulla cum tempore sequi vel nobis quo iste expedita doloremque fugit
+                                    laborum
+                                    cumque similique? Beatae, maxime!<span class="float-right">5</span><span> <i class="fas fa-arrow-alt-circle-up text-success float-right m-2"></i></span><span> <i class="fas fa-arrow-alt-circle-down text-danger float-right m-2"></i></span><span><i class="fas fa-heart text-warning float-right m-2"></i></span></p>
+                            </div>
+                        </div>
+                        <div class="cardTop my-2 mr-5">
+                            <div class="col mt-2 p-2">
+                                <img src="https://i.pinimg.com/originals/d7/f3/9a/d7f39a272198d52d27f35af847a9c26c.jpg"
+                                class="img-thumbnail m-2" style="max-width:100px; max-height:100px; float:left">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nihil modi,
+                                    corrupti
+                                    vero,
+                                    harum nulla cum tempore sequi vel nobis quo iste expedita doloremque fugit
+                                    laborum
+                                    cumque similique? Beatae, maxime!<span class="float-right">5</span><span> <i class="fas fa-arrow-alt-circle-up text-success float-right m-2"></i></span><span> <i class="fas fa-arrow-alt-circle-down text-danger float-right m-2"></i></span><span><i class="fas fa-heart text-warning float-right m-2"></i></span></p>
+                            </div>
+                        </div>
+                        <div class="cardTop my-2 mr-5">
+                            <div class="col mt-2 p-2">
+                                <img src="https://i.pinimg.com/originals/d7/f3/9a/d7f39a272198d52d27f35af847a9c26c.jpg"
+                                class="img-thumbnail m-2" style="max-width:100px; max-height:100px; float:left">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nihil modi,
+                                    corrupti
+                                    vero,
+                                    harum nulla cum tempore sequi vel nobis quo iste expedita doloremque fugit
+                                    laborum
+                                    cumque similique? Beatae, maxime!<span class="float-right">5</span><span> <i class="fas fa-arrow-alt-circle-up text-success float-right m-2"></i></span><span> <i class="fas fa-arrow-alt-circle-down text-danger float-right m-2"></i></span><span><i class="fas fa-heart text-warning float-right m-2"></i></span></p>
+                            </div>
+                        </div>
+                        
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="viewrightComments" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
