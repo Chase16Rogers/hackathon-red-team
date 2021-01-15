@@ -6,6 +6,6 @@ const Comment = new Schema({
   commDesc: { type: String, required: true },
   postId: { type: String, required: true },
   fighterId: { type: String, required: true },
-  rate: { type: Number, required: true },
+  rate: { type: Number, required: true }
 })
 export default Comment
