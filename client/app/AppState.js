@@ -1,10 +1,20 @@
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
+import Profile from "./Models/Profile.js"
+import Fight from "../app/Models/Fight.js"
+import Comment from "../app/Models/Comment.js"
 
 class AppState extends EventEmitter {
   user = {}
   account = {}
-  values = []
+
+  //Client Objects
+  /** @type {Profile[]} */
+  profiles = []
+  /** @type {Comment[]} */
+  comments = []
+  /** @type {Fight[]} */
+  fights = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {

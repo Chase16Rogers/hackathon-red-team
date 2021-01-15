@@ -1,5 +1,5 @@
 import BaseController from '../utils/BaseController'
-// import { Auth0Provider } from '@bcwdev/auth0provider'
+import { Auth0Provider } from '@bcwdev/auth0provider'
 import { fightsService } from '../services/FightsService'
 
 export class FightsController extends BaseController {
@@ -8,6 +8,7 @@ export class FightsController extends BaseController {
     this.router
       .get('', this.getAll)
       .get('/:id', this.getOne)
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.delete)
@@ -31,6 +32,7 @@ export class FightsController extends BaseController {
 
   async create(req, res, next) {
     try {
+      req.body.userId = req.userInfo.req.params.id
       res.send(await fightsService.create(req))
     } catch (error) {
       next(error)
@@ -39,6 +41,7 @@ export class FightsController extends BaseController {
 
   async edit(req, res, next) {
     try {
+      req.body.userId = req.userInfo.req.params.id
       res.send(await fightsService.edit(req))
     } catch (error) {
       next(error)
