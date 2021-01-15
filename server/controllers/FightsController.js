@@ -32,7 +32,7 @@ export class FightsController extends BaseController {
 
   async create(req, res, next) {
     try {
-      req.body.userId = req.userInfo.req.params.id
+      req.body.userId = req.userInfo.id
       res.send(await fightsService.create(req))
     } catch (error) {
       next(error)
@@ -41,7 +41,7 @@ export class FightsController extends BaseController {
 
   async edit(req, res, next) {
     try {
-      req.body.userId = req.userInfo.req.params.id
+      req.body.userId = req.userInfo.id
       res.send(await fightsService.edit(req))
     } catch (error) {
       next(error)
