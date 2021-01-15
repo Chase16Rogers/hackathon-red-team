@@ -18,5 +18,7 @@ const Fight = new Schema({
     winVote: { type: Number, default: 0 }
   }],
   voter: { type: Array }
-})
+},
+{ timestamps: true, toJSON: { virtuals: true } }
+)
 export default Fight

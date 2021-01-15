@@ -32,7 +32,7 @@ class UsersService {
       throw new BadRequest('ERROR 404 CANNOT DELETE AS THERE IS NO USER BY THAT ID')
     }
     const userFights = await dbContext.Fights.find({ userId: req.params.id })
-    console.log()
+    console.log(userFights)
     return 'Successfully deleted'
   }
 }

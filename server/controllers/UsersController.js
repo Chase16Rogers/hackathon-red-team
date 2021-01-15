@@ -6,8 +6,8 @@ export class UsersController extends BaseController {
   constructor() {
     super('api/users')
     this.router
-      .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getAll)
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .get('/:id', this.getOne)
       .post('', this.create)
       .put('/:id', this.edit)
@@ -32,6 +32,7 @@ export class UsersController extends BaseController {
 
   async create(req, res, next) {
     try {
+      // req.body = req.userInfo.id
       res.send(await usersService.create(req))
     } catch (error) {
       next(error)
