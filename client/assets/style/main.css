@@ -507,7 +507,7 @@ mark,
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
 }
 
@@ -10733,7 +10733,7 @@ body {
 }
 
 main {
-  flex-grow: 1;
+
 }
 
 /*# sourceMappingURL=main.css.map */
