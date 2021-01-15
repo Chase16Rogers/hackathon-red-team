@@ -5,45 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/bootstrap (5).css">
     <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <title>client</title>
 </head>
 
-<body>
-    <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">client</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                </div>
+<body class="darken">
+    <header class="container-fluid text-center sticky-top">
+        <nav class="navbar navbar-dark navbar-expand bg-dark text-light titlefont text-center sticky-top"
+            style="opacity: .5">
+            <div class="col text-center justify-content-center">
+                <h1 class="titleFont text-center">Who Would Win?</h1>
             </div>
-            <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+            <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
         </nav>
     </header>
     <main class="container-fluid">
-        <div class="row my-3">
-            <div class="col-5">
-                <div class="card p-2 skeleton-loader">
-                    <div class="card-title p-2">
-                        <div class="d-flex align-items-center">
-                            <div class="skeleton-loader avatar"></div>
-                            <div class="skeleton-loader text mx-2"></div>
-                        </div>
-                    </div>
-                    <div class="card-body border-top">
-                        <div class="skeleton-loader text block"></div>
-                        <div class="skeleton-loader text block"></div>
-                        <div class="skeleton-loader text"></div>
-                    </div>
+        <div class="row fightcard m-5 justify-content-center">
+            <div class="col-4 p-2 my-5 text-center">
+                <h1 class="display-3 nameLine">Gambit</h1>
+                <img src="https://www.superherodb.com/pictures2/portraits/10/100/64.jpg" alt="" srcset="">
+            </div>
+            <div class="d-flex align-self-center col-1 p-1">
+                <div class="card-ticker">
+                    <h3><i class="fas fa-arrow-alt-circle-up text-success"></i></h3>
+                    <h2 class="titleFont">5</h2>
+                    <h3><i class="fas fa-arrow-alt-circle-down text-danger"></i></h3>
                 </div>
             </div>
+            <div class="d-flex col-1 align-self-center">
+                <h1 class="display-2 wordLine">VS</h1>
+            </div>
+            <div class="d-flex align-self-center justify-content-end col-1 p-1 text-right">
+                <div class="card-ticker">
+                    <h3><i class="fas fa-arrow-alt-circle-up text-success"></i></h3>
+                    <h2 class="titleFont">10</h2>
+                    <h3><i class="fas fa-arrow-alt-circle-down text-danger"></i></h3>
+                </div>
+            </div>
+            <div class="col-4 p-2 my-5 text-center">
+                <h1 class="display-3 nameLine">Ghost Rider</h1>
+                <img src="https://www.superherodb.com/pictures2/portraits/10/100/67.jpg" alt="" srcset="">
+            </div>
+        </div>
         </div>
     </main>
     <footer class="container-fluid bg-dark text-light">
