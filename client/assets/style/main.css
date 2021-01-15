@@ -5486,6 +5486,8 @@ a.close.disabled {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
+  height: 60vh;
+  overflow-y:auto;
 }
 
 .modal-footer {
