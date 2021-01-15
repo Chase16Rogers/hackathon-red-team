@@ -11,12 +11,19 @@ class CommentsService {
     }
     async createComment(comment) {
         let res = await api.post(comment)
+        console.log(res)
+        this.getComments()
     }
-    editComment(commId) {
-        throw new Error("Method not implemented.");
+    async editComment(commId) {
+        //finding and waiting for a comment to edit
+        let comment = await ProxyState.comments.find(comment => comment.postId == commId)
+        console.log(comment)
     }
-    deleteComment(commId) {
-        throw new Error("Method not implemented.");
+    async deleteComment(commId) {
+        console.log(commId)
+        let res = await api.delete(commId)
+        ProxyState.comments = ProxyState.comments.filter(comment => comment.postId != commId)
+        console.log(res.data)
     }
 
 }

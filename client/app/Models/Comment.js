@@ -19,3 +19,5 @@ export default class Comment {
     }
 
 }
+
+{/* <p ${this.id ? "contenteditable" = "true" : ''}>${this.description}</p> */ }
