@@ -1,6 +1,6 @@
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
-import Profile from "./Models/Profile.js"
+import Profiles from "./Models/Profiles.js"
 import Fight from "../app/Models/Fight.js"
 import Comment from "../app/Models/Comment.js"
 
@@ -9,8 +9,8 @@ class AppState extends EventEmitter {
   account = {}
 
   //Client Objects
-  /** @type {Profile} */
-  profile = null
+  /** @type {Profiles[]} */
+  profiles = []
   /** @type {Comment[]} */
   comments = []
   /** @type {Fight[]} */

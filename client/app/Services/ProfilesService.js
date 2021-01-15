@@ -1,15 +1,22 @@
-import { ProxyState } from "../AppState.js";
-import Profile from "../Models/Profile.js";
+// import { ProxyState } from "../AppState.js";
+// import Profiles from "../Models/Profiles.js";
+// import { api } from "./AxiosService.js";
 
-class ProfilesService {
-    createProfile(profId) {
-        throw new Error("Method not implemented.");
-    }
-    getProfile() {
-        throw new Error("Method not implemented.");
-    }
+// class ProfilesService {
+//     async getProfile() {
+//         console.log("Service get Profile")
+//         let res = await api.get('profile')
+//         ProxyState.profiles = new Profiles(res.data)
+//     }
 
-}
 
-export const profilesService = new ProfilesService();
-export default profilesService;
+//     async removeProfile(profId) {
+//         console.log(profId)
+//         let res = await api.delete(profId)
+//         ProxyState.profiles = ProxyState.profiles.filter(p => p._id == profId)
+//     }
+
+// }
+
+// export const profilesService = new ProfilesService();
+// export default profilesService;
