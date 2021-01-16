@@ -2,6 +2,10 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class CommentsService {
+  async getAllComments(req) {
+    return await dbContext.Comments.find({ fighterId: req.params.fighterId })
+  }
+
   async getAll(query = {}) {
     return await dbContext.Comments.find(query)
   }
