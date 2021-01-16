@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const Comment = new Schema({
   userId: { type: String, required: true },
+  userPic: { type: String, default: 'https://thiscatdoesnotexist.com' },
   commDesc: { type: String, required: true },
   postId: { type: String, required: true },
   fighterId: { type: String, required: true },

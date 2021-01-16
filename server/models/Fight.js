@@ -3,8 +3,8 @@ import { generateId } from '../utils/GenerateId'
 const Schema = mongoose.Schema
 
 const Fight = new Schema({
-  arg: { type: String, required: true },
   userId: { type: String, required: true },
+  userPic: { type: String, default: 'https://thiscatdoesnotexist.com' },
   fighterOne: [{
     name: { type: String, required: true },
     img: { type: String, default: 'https://thiscatdoesnotexist.com' },
