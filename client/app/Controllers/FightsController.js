@@ -28,12 +28,16 @@ export default class FightsController {
   constructor() {
     ProxyState.on('activeFighterOne', _drawFighterOne)
     ProxyState.on('activeFighterOne', _drawFighterTwo)
+<<<<<<< HEAD
     this.test()
   }
 
   async test() {
     const res = await api.get('', ProxyState.fighters)
     console.log(res.data)
+=======
+    this.getFighters()
+>>>>>>> 5e73f5fc37c4f6a0cfedfc83a96759a8fa0be67e
   }
 
   getFighters() {
@@ -47,15 +51,13 @@ export default class FightsController {
   createFight(event) {
     event.preventDefault()
     const form = event.target
-    const fight = {
-      fighterOne: form.inputCharacterOne.value,
-      fighterOneURL: form.characteroneImage.value,
-      fighterTwo: form.inputCharacterTwo.value,
-      fighterTwoURL: form.charactertwoImage.value
+    let fight = {
+      fighterOne: [{ name: form.inputCharacterOne.value, img: form.characteroneImage.value }],
+      fighterTwo: [{ name: form.inputCharacterTwo.value, img: form.charactertwoImage.value }]
     }
     console.log(fight)
     try {
-      fightsService.createFight()
+      fightsService.createFight(fight)
     } catch (error) {
       console.error(error)
     }
@@ -82,6 +84,7 @@ export default class FightsController {
     console.log(offerName)
     const windowcontent = document.getElementsByClassName('windowcontent')
     for (i = 0; i < windowcontent.length; i++) {
+      // @ts-ignore
       windowcontent[i].style.display = 'none'
     }
 
