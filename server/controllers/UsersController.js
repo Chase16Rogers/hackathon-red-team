@@ -1,5 +1,5 @@
 import BaseController from '../utils/BaseController'
-// import { Auth0Provider } from '@bcwdev/auth0provider'
+import { Auth0Provider } from '@bcwdev/auth0provider'
 import { usersService } from '../services/UsersService'
 
 export class UsersController extends BaseController {
@@ -7,6 +7,7 @@ export class UsersController extends BaseController {
     super('api/users')
     this.router
       .get('', this.getAll)
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .get('/:id', this.getOne)
       .post('', this.create)
       .put('/:id', this.edit)
@@ -31,6 +32,7 @@ export class UsersController extends BaseController {
 
   async create(req, res, next) {
     try {
+      // req.body = req.userInfo.id
       res.send(await usersService.create(req))
     } catch (error) {
       next(error)

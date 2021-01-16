@@ -7,5 +7,7 @@ const Comment = new Schema({
   postId: { type: String, required: true },
   fighterId: { type: String, required: true },
   rate: { type: Number, required: true }
-})
+},
+{ timestamps: true, toJSON: { virtuals: true } }
+)
 export default Comment

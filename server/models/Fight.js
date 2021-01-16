@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { generateId } from '../utils/GenerateId'
 const Schema = mongoose.Schema
 
 const Fight = new Schema({
@@ -7,15 +8,17 @@ const Fight = new Schema({
   fighterOne: [{
     name: { type: String, required: true },
     img: { type: String, default: 'https://thiscatdoesnotexist.com' },
-    commentId: { type: String, required: true },
+    commentId: { type: String, default: generateId() },
     winVote: { type: Number, default: 0 }
   }],
   fighterTwo: [{
     name: { type: String, required: true },
     img: { type: String, default: 'https://thiscatdoesnotexist.com' },
-    commentId: { type: String, required: true },
+    commentId: { type: String, default: generateId() },
     winVote: { type: Number, default: 0 }
   }],
   voter: { type: Array }
-})
+},
+{ timestamps: true, toJSON: { virtuals: true } }
+)
 export default Fight
