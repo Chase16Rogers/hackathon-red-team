@@ -114,6 +114,14 @@ header:hover{
   max-width: 3em;
   max-height:3em;
 }
+.windowcontent{
+  display: none;
+  animation: fadeEffect 1.5s;
+}
+@keyframes fadeEffect{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 hr {
   box-sizing: content-box;
   height: 0;

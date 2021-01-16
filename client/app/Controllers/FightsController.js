@@ -6,23 +6,23 @@ import fightsService from '../Services/FightsService.js'
 // deletefight
 
 function _drawFighterOne() {
-  let template = ''
-  ProxyState.fights.forEach(f => {
-    template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
-  })
-  document.getElementById('api-fightersOne').innerHTML = template
+    let template = ''
+    ProxyState.fighters.forEach(f => {
+        template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
+    })
+    document.getElementById('api-fightersOne').innerHTML = template
 }
 function _drawFighterTwo() {
-  let template = ''
-  ProxyState.fights.forEach(f => {
-    template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
-  })
-  document.getElementById('api-fightersTwo').innerHTML = template
+    let template = ''
+    ProxyState.fighters.forEach(f => {
+        template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
+    })
+    document.getElementById('api-fightersTwo').innerHTML = template
 }
 
 function _drawActiveOne() {
-  const template = ''
-  // if (ProxyState.active)
+    const template = ''
+    // if (ProxyState.active)
 }
 
 function _drawActiveTwo() {
@@ -34,30 +34,22 @@ function _drawActiveTwo() {
 }
 
 export default class FightsController {
-  constructor() {
-    ProxyState.on('fighterOne', _drawFighterOne)
-    ProxyState.on('fightTwo', _drawFighterTwo)
-    ProxyState.on('activeFighterOne', _drawActiveOne)
-    ProxyState.on('activeFighterOne', _drawActiveTwo)
+    constructor() {
+        ProxyState.on('fighterOne', _drawFighterOne)
+        ProxyState.on('fightTwo', _drawFighterTwo)
+        ProxyState.on('activeFighterOne', _drawActiveOne)
+        ProxyState.on('activeFighterOne', _drawActiveTwo)
 
-    this.getFighters()
-  }
-
-  getFighters() {
-    try {
-      fightsService.getFights()
-    } catch (error) {
-      console.error(error)
+        this.getFighters()
     }
-  }
 
-  createFight(event) {
-    event.preventDefault()
-    const form = event.target
-    const fight = {
-      name: form.name.value
+    getFighters() {
+        try {
+            fightsService.getFights()
+        } catch (error) {
+            console.error(error)
+        }
     }
-    try {
 
     createFight(name) {
         try {
@@ -66,7 +58,7 @@ export default class FightsController {
             console.error(error)
         }
     }
-  }
+
 
     deleteFight() {
         try {
@@ -75,6 +67,4 @@ export default class FightsController {
             console.error(error)
         }
     }
-
-  }
 }
