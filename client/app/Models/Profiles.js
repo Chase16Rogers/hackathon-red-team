@@ -1,6 +1,4 @@
 
-
-
 // export default class Profiles {
 //     constructor(data) {
 //         this.name = data.name
@@ -15,15 +13,8 @@
 //     get Template() {
 //         return /*html*/`
 
-
-
-
-
-
 //         `
 
 //     }
-
-
 
 // }
