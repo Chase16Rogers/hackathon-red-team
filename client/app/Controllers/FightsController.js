@@ -1,10 +1,22 @@
 import { ProxyState } from '../AppState.js'
+import Fight from '../Models/Fight.js'
 import { api } from '../Services/AxiosService.js'
 import fightsService from '../Services/FightsService.js'
+
 
 // drawfight
 // createfight
 // deletefight
+
+function _drawFights() {
+  let fights = ProxyState.fights
+  let template = ''
+  console.log("Showing the fight", ProxyState.fights)
+  fights.forEach(fight => {
+    template += fight.Template
+  })
+  document.getElementById('fightCard').innerHTML = template
+}
 
 function _drawFighterOne() {
   console.log('drawing fighter ONE', ProxyState.activeFighterOne)
@@ -28,7 +40,11 @@ export default class FightsController {
   constructor() {
     ProxyState.on('activeFighterOne', _drawFighterOne)
     ProxyState.on('activeFighterOne', _drawFighterTwo)
+    ProxyState.on('fight', _drawFights)
+
+
     this.getFighters()
+
   }
 
   getFighters() {
@@ -46,6 +62,7 @@ export default class FightsController {
       fighterOne: [{ name: form.inputCharacterOne.value, img: form.characteroneImage.value }],
       fighterTwo: [{ name: form.inputCharacterTwo.value, img: form.charactertwoImage.value }]
     }
+    _drawFights()
     console.log(fight)
     try {
       fightsService.createFight(fight)
@@ -87,4 +104,6 @@ export default class FightsController {
     evt.currentTarget.className += ' active'
     console.log('buttonclicked')
   }
+
+
 }
