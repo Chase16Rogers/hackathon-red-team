@@ -1,4 +1,3 @@
-
 export default class Fight {
     constructor(data) {
         this.name = data.name
@@ -14,12 +13,11 @@ export default class Fight {
 
     get Template() {
         return /* html */`
-        
-        
-        
-        
-        
-        `
+        <div class="col-4 p-2 my-5 text-center">
+                    <h1 class="display-3 nameLine">${this.name}</h1>
+                    <img src="${this.imgURL}" class="img-fluid" alt=""
+                        srcset="">
+                </div>`
     }
 
     //  function Vote() {
