@@ -46,6 +46,10 @@ function sanitizeBody(body) {
 }
 
 class AccountService {
+  async getAll(query = {}) {
+    return await dbContext.Account.find(query)
+  }
+
   /**
    * Provided an array of user ids will return an array of user accounts with email picture and name
    * @param {String[]} ids Array of email addresses to lookup users by
