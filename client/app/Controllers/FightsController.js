@@ -27,6 +27,7 @@ export default class FightsController {
   constructor() {
     ProxyState.on('activeFighterOne', _drawFighterOne)
     ProxyState.on('activeFighterOne', _drawFighterTwo)
+    this.getFighters()
   }
 
   getFighters() {
