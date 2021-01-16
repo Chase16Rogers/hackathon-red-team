@@ -7,9 +7,9 @@ export default class Fight {
     this.argument = data.arg
     this.winvote = data.winvote
     this.fighterOne = data.fighterOne[0].name
-    this.fighterTwo = data.fighterTwo[1].name
+    this.fighterTwo = data.fighterTwo[0].name
     this.fighterOneURL = data.fighterOne[0].img
-    this.fighterTwoURL = data.fighterTwo[1].img
+    this.fighterTwoURL = data.fighterTwo[0].img
     this.fighterOneVote = data.fighterOne[0].winvote
     this.fighterTwoVote = data.fighterTwo[0].winvote
     this.id = data._id
