@@ -10,17 +10,10 @@ class FightsService {
     console.log(res)
   }
 
-<<<<<<< HEAD
-  async createFight() {
-    const res = await api.post('', ProxyState.fighters)
-    console.log(res.data)
-    ProxyState.fighters = [...ProxyState.fighters, new Fight(res.data)]
-=======
   async createFight(fight) {
     const res = await api.post('/fights', fight)
     console.log(res.data.fighterOne)
     ProxyState.fighters = [...ProxyState.fighters, new Fight(res.data.results)]
->>>>>>> 5e73f5fc37c4f6a0cfedfc83a96759a8fa0be67e
   }
 
   async editFight(fightId) {
