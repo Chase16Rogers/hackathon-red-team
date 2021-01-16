@@ -9,12 +9,10 @@ export default class Fight {
         this.winvote = data.winvote
         this.fighterOne = []
         this.fighterTwo = []
-
-
     }
 
     get Template() {
-        return /*html */`
+        return /* html */`
         
         
         
@@ -27,5 +25,5 @@ export default class Fight {
     //     let up = 0
     //     let down = 0
 
+    // }
 }
-

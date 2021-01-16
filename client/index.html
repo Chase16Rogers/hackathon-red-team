@@ -15,23 +15,25 @@
     <title>client</title>
 </head>
 
-<body class="darken container-fluid">
-    <header class="container-fluid text-center sticky-top">
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light titlefont text-center sticky-top p-0"
-            style="opacity: .5">
+<body class="darken">
+    <header class="container-fluid text-center bg-dark sticky-top">
+        <nav class=" topnavigation navbar navbar-dark navbar-expand bg-dark text-light titlefont text-center sticky-top p-0"
+            >
             <div class="col text-center justify-content-center">
                 <h1 class="titleFont text-center">Who Would Win?</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col text-center">
-                    <button class="btn btn-outline text-light titleFont"onclick="">Create Fight</button>
-                    <button class="btn btn-outline text-light titleFont"onclick="">View Fight</button>
+                    <button class="windowlinks btn btn-outline text-light titleFont"onclick="app.fightController.openWindow(event, 'createWindow')">Create Fight</button>
+                    <button class="windowlinks btn btn-outline text-light titleFont"onclick="app.fightController.openWindow(event, 'viewWindow')">View Fight</button>
                 </div>
             </div>
             <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
         </nav>
     </header>
     <main class="container-fluid">
+        <!-- Fight Window -->
+        <div id="fightWindow"class="windowcontent">
         <div class="row fightcard m-5 justify-content-center">
             <div class="d-flex col-12 flex-row justify-content-center text-center">
                 <div class="col-4 p-2 my-5 text-center">
@@ -125,7 +127,9 @@
                 </div>
             </div>
         </div>
+    </div>
         </div>
+        <!-- LEFT COMMENTS MODAL -->
         <div class="modal fade" id="viewleftComments" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">

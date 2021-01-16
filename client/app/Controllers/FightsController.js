@@ -1,26 +1,28 @@
-import { ProxyState } from "../AppState.js";
-import fightsService from "../Services/FightsService.js";
+import { ProxyState } from '../AppState.js'
+import fightsService from '../Services/FightsService.js'
 
-//drawfight
-//createfight
-//deletefight
+// drawfight
+// createfight
+// deletefight
 
-function _drawFighters() {
-    let template = ''
-    ProxyState.fighters.forEach(f => {
-        template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
-    })
-    document.getElementById("api-fighterOne").innerHTML = template
+function _drawFighterOne() {
+  let template = ''
+  ProxyState.fights.forEach(f => {
+    template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
+  })
+  document.getElementById('api-fightersOne').innerHTML = template
+}
+function _drawFighterTwo() {
+  let template = ''
+  ProxyState.fights.forEach(f => {
+    template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
+  })
+  document.getElementById('api-fightersTwo').innerHTML = template
 }
 
-
-
 function _drawActiveOne() {
-    let template = ''
-    if (ProxyState.activeFighterOne) {
-        template = ProxyState.activeFighterOne.Template
-    }
-    document.getElementById('activeOne').innerHTML = template
+  const template = ''
+  // if (ProxyState.active)
 }
 
 function _drawActiveTwo() {
@@ -32,24 +34,30 @@ function _drawActiveTwo() {
 }
 
 export default class FightsController {
+  constructor() {
+    ProxyState.on('fighterOne', _drawFighterOne)
+    ProxyState.on('fightTwo', _drawFighterTwo)
+    ProxyState.on('activeFighterOne', _drawActiveOne)
+    ProxyState.on('activeFighterOne', _drawActiveTwo)
 
-    constructor() {
-        ProxyState.on("fighterOne", _drawFighters)
-        ProxyState.on("fightTwo", _drawFighters)
-        ProxyState.on("activeFighterOne", _drawActiveOne)
-        ProxyState.on("activeFighterOne", _drawActiveTwo)
+    this.getFighters()
+  }
 
-
-        this.getFighters()
+  getFighters() {
+    try {
+      fightsService.getFights()
+    } catch (error) {
+      console.error(error)
     }
+  }
 
-    getFighters() {
-        try {
-            fightsService.getFights()
-        } catch (error) {
-            console.error(error)
-        }
+  createFight(event) {
+    event.preventDefault()
+    const form = event.target
+    const fight = {
+      name: form.name.value
     }
+    try {
 
     createFight(name) {
         try {
@@ -58,6 +66,7 @@ export default class FightsController {
             console.error(error)
         }
     }
+  }
 
     deleteFight() {
         try {
@@ -67,5 +76,5 @@ export default class FightsController {
         }
     }
 
-
+  }
 }
