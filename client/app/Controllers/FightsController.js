@@ -7,14 +7,14 @@ import fightsService from '../Services/FightsService.js'
 
 function _drawFighterOne() {
     let template = ''
-    ProxyState.fights.forEach(f => {
+    ProxyState.fighters.forEach(f => {
         template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
     })
     document.getElementById('api-fightersOne').innerHTML = template
 }
 function _drawFighterTwo() {
     let template = ''
-    ProxyState.fights.forEach(f => {
+    ProxyState.fighters.forEach(f => {
         template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
     })
     document.getElementById('api-fightersTwo').innerHTML = template
