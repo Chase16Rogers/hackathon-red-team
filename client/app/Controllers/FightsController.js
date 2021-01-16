@@ -1,4 +1,5 @@
 import { ProxyState } from '../AppState.js'
+import { api } from '../Services/AxiosService.js'
 import fightsService from '../Services/FightsService.js'
 
 // drawfight
@@ -41,7 +42,7 @@ export default class FightsController {
   createFight(event) {
     event.preventDefault()
     const form = event.target
-    let fight = {
+    const fight = {
       fighterOne: [{ name: form.inputCharacterOne.value, img: form.characteroneImage.value }],
       fighterTwo: [{ name: form.inputCharacterTwo.value, img: form.charactertwoImage.value }]
     }

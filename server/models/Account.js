@@ -8,8 +8,8 @@ const Account = new Schema(
     email: { type: String, lowercase: true, unique: true },
     name: { type: String, required: true },
     picture: { type: String },
-    fav: { type: String, required: true },
-    desc: { type: String, required: true }
+    fav: { type: String },
+    desc: { type: String }
     // NOTE If you wish to add additional public properties for Accounts do so here
   },
   { timestamps: true, _id: false, toJSON: { virtuals: true } }
