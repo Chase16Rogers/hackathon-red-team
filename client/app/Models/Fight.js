@@ -10,6 +10,7 @@ export default class Profiles {
         this.fighterOne = []
         this.fighterTwo = []
 
+
     }
 
     get Template() {
@@ -22,10 +23,9 @@ export default class Profiles {
         `
     }
 
- function Vote() {
-    let up = 0
-    let down = 0
+    //  function Vote() {
+    //     let up = 0
+    //     let down = 0
 
 }
 
-}
