@@ -35,7 +35,7 @@
         
         <!-- Fight Window -->
         <div id="fightWindow"class="windowcontent">
-        <div class="row fightcard m-5 justify-content-center">
+        <div class="row fightcard m-5 justify-content-center"id="fightCard">
             <div class="d-flex col-12 flex-row justify-content-center text-center">
                 <div class="col-4 p-2 my-5 text-center">
                     <h1 class="display-3 nameLine">Gambit</h1>
@@ -302,6 +302,7 @@
                     </h1>
                     <div class="row text-center justify-content-center">
                       <div class="form-group col-md-6">
+                          <form onsubmit="app.fightsController.createFight(event)">
                           <label for="firstCharacter"><h4>First Fighter</h4></label>
                           <input type="text" class="form-control" id="inputCharacterOne" placeholder="Spiderman">
                         </div>
@@ -313,14 +314,14 @@
                       <div class="row text-center justify-content-center">
                           <div class="form-group col-md-6">
                               <label for="secondCharacter"><h4>2nd Fighter</h4></label>
-                              <input type="text" class="form-control" id="inputCharacterOne" placeholder="Batman">
+                              <input type="text" class="form-control" id="inputCharacterTwo" placeholder="Batman">
                             </div>
                             <div class="form-group col-md-6">
                               <label for="charactertwoImage"><h4>2nd Fighter URL</h4></label>
                               <input type="text" class="form-control" id="charactertwoImage" placeholder="URL">
                             </div>
                           </div>
-                      <button type="submit" class="btn btn-success wobble-vertical-on-hover m-2">Fight!</button>
+                      <button type="submit" class="windowlinks btn btn-success wobble-vertical-on-hover m-2 btn-5 titleFont"onclick="app.fightsController.openWindow(event, 'fightWindow')">Fight!</button>
                     </form>
                       </div>
                     </div>

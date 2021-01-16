@@ -41,9 +41,12 @@ export default class FightsController {
     event.preventDefault()
     const form = event.target
     const fight = {
-      name: form.name.value,
-      imgURL: form.imgURL.value
+      fighterOne: form.inputCharacterOne.value,
+      fighterOneURL: form.characteroneImage.value,
+      fighterTwo: form.inputCharacterTwo.value,
+      fighterTwoURL: form.charactertwoImage.value
     }
+    console.log(fight)
     try {
       fightsService.createFight()
     } catch (error) {
