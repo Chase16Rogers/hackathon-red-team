@@ -1,17 +1,13 @@
+import fightsService from '../Services/FightsService.js'
+
 export default class Fight {
   constructor(data) {
-    this.name = data.name
-    this.userId = data.userId
-    this.imgURL = data.imgURL
-    this.commentId = data.commentId
-    this.argument = data.arg
-    this.winvote = data.winvote
     this.fighterOne = data.fights.fighterOne[0].name
     this.fighterTwo = data.fights.fighterTwo[0].name
-    this.fighterOneURL = data.fights.fighterOne[0].img
-    this.fighterTwoURL = data.fights.fighterTwo[0].img
-    this.fighterOneVote = data.fights.fighterOne[0].winvote
-    this.fighterTwoVote = data.fights.fighterTwo[0].winvote
+    this.fighterOneURL = data.fight.fighterOne[0].img
+    this.fighterTwoURL = data.fight.fighterTwo[0].img
+    this.fighterOneVote = data.fight.fighterOne[0].winvote
+    this.fighterTwoVote = data.fight.fighterTwo[0].winvote
     this.id = data._id
   }
 

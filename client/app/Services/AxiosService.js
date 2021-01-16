@@ -11,6 +11,7 @@ export const supersApi = axios.create({
   baseURL: 'https://www.superheroapi.com/api.php/10217240308389867'
 })
 
+// @ts-ignore
 export const test = axios.create({
   baseURL: 'http://localhost:3000'
 })
