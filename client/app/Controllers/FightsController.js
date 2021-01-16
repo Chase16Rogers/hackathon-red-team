@@ -3,15 +3,14 @@ import Fight from '../Models/Fight.js'
 import { api } from '../Services/AxiosService.js'
 import fightsService from '../Services/FightsService.js'
 
-
 // drawfight
 // createfight
 // deletefight
 
 function _drawFights() {
-  let fights = ProxyState.fights
+  const fights = ProxyState.fights
   let template = ''
-  console.log("Showing the fight", ProxyState.fights)
+  console.log('Showing the fight', ProxyState.fights)
   fights.forEach(fight => {
     template += fight.Template
   })
@@ -42,9 +41,7 @@ export default class FightsController {
     ProxyState.on('activeFighterOne', _drawFighterTwo)
     ProxyState.on('fight', _drawFights)
 
-
     this.getFighters()
-
   }
 
   getFighters() {
@@ -104,6 +101,4 @@ export default class FightsController {
     evt.currentTarget.className += ' active'
     console.log('buttonclicked')
   }
-
-
 }
