@@ -16,6 +16,9 @@ class AppState extends EventEmitter {
   fights = []
   /** @type {Fight} */
   activeFight = null
+  activeFighterOne = null
+  activeFighterTwo = null
+  fight = null
 }
 
 export const ProxyState = new Proxy(new AppState(), {
