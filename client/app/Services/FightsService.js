@@ -9,8 +9,8 @@ class FightsService {
     ProxyState.fighters = res.data.map(f => new Fight(f))
   }
 
-  async createFight() {
-    const res = await api.post('', ProxyState.fighters)
+  async createFight(fight) {
+    const res = await api.post('/fights', fight)
     console.log(res)
     ProxyState.fighters = [...ProxyState.fighters, new Fight(res.data)]
   }
