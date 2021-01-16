@@ -6,8 +6,6 @@ import FightsController from './Controllers/FightsController.js'
 class App {
   authController = new AuthController();
 
-  // client controllers
-  // profilesController = new ProfilesController();
   commentsController = new CommentsController();
   fightsController = new FightsController();
 }

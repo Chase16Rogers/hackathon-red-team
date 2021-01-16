@@ -9,8 +9,6 @@ class AppState extends EventEmitter {
   account = {}
 
   //Client Objects
-  // /** @type {Profiles[]} */
-  // profiles = []
   /** @type {Comment[]} */
   comments = []
   /** @type {Fight[]} */
