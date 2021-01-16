@@ -2,21 +2,22 @@ import { accountService } from '../../../server/services/AccountService.js'
 import { ProxyState } from '../AppState.js'
 import commentsService from '../Services/CommentsService.js'
 
-function _drawComments() {
-  const comments = ProxyState.comments
-  let template = ''
-  comments.forEach(comment => {
-    template += comment.Template
-  })
-  document.getElementById('comment').innerHTML = template
-}
-
 export default class CommentsController {
   constructor() {
-    ProxyState.on('comment', _drawComments)
+    // ProxyState.on('comment', _drawComments)
     commentsService.getComments()
-    _drawComments()
+    // _drawComments()
     accountService.getAccount()
+  }
+
+  _drawComments(Id) {
+    //   const comments = ProxyState.comments
+    const fighterComments = ProxyState.comments.filter(c => c.fighterId === Id)
+    let template = ''
+    fighterComments.forEach(comment => {
+      template += comment.Template
+    })
+    document.getElementById('comment').innerHTML = template
   }
 
   getComments() {

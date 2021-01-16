@@ -6,6 +6,7 @@ export default class Comment {
     this.postId = data.postId
     this.rate = data.rate
     this.userPic = data.userPic
+    this.fighterId = data.fighterId
   }
 
   get Template() {
