@@ -6,63 +6,66 @@ import fightsService from '../Services/FightsService.js'
 // deletefight
 
 function _drawFighterOne() {
+    console.log("drawing fighter ONE", ProxyState.activeFighterOne)
     let template = ''
-    ProxyState.fighters.forEach(f => {
-        template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
-    })
-    document.getElementById('api-fightersOne').innerHTML = template
+    if (ProxyState.activeFighterOne) {
+        template = ProxyState.activeFighterOne.Template
+    }
+    document.getElementById('fighterOne').innerHTML = template
+
 }
+
 function _drawFighterTwo() {
-    let template = ''
-    ProxyState.fighters.forEach(f => {
-        template += `<li class="adder: font-weight-bold" style="text-transform" onclick = "app.FightsController.getFighters('${f.name}')">${f.name}</li>`
-    })
-    document.getElementById('api-fightersTwo').innerHTML = template
-}
-
-function _drawActiveOne() {
-    const template = ''
-    // if (ProxyState.active)
-}
-
-function _drawActiveTwo() {
+    console.log("drawing fighter TWO", ProxyState.activeFighterTwo)
     let template = ''
     if (ProxyState.activeFighterTwo) {
         template = ProxyState.activeFighterTwo.Template
     }
-    document.getElementById('activeTwo').innerHTML = template
+    document.getElementById('fighterTwo').innerHTML = template
+
 }
 
 export default class FightsController {
     constructor() {
-        ProxyState.on('fighterOne', _drawFighterOne)
-        ProxyState.on('fightTwo', _drawFighterTwo)
-        ProxyState.on('activeFighterOne', _drawActiveOne)
-        ProxyState.on('activeFighterOne', _drawActiveTwo)
+        ProxyState.on('activeFighterOne', _drawFighterOne)
+        ProxyState.on('activeFighterOne', _drawFighterTwo)
 
-        this.getFighters()
+
     }
 
     getFighters() {
         try {
-            fightsService.getFights()
+            fightsService.getFighters()
         } catch (error) {
             console.error(error)
         }
     }
 
-    createFight(name) {
+    createFight(event) {
+        event.preventDefault()
+        let form = event.target
+        let fight = {
+            name: form.name.value,
+            imgURL: form.imgURL.value
+        }
         try {
-            fightsService.createFight(name)
+            fightsService.createFight()
         } catch (error) {
             console.error(error)
         }
     }
 
+    editFight() {
+        try {
+            fightsService.editFight()
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     deleteFight() {
         try {
-            fightsService.deleteFighter()
+            fightsService.deleteFight()
         } catch (error) {
             console.error(error)
         }
