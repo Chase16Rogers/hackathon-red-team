@@ -1,5 +1,5 @@
 
-export default class Profiles {
+export default class Fight {
     constructor(data) {
         this.argument = data.arg
         this.userId = data.userId

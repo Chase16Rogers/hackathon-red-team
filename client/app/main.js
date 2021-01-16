@@ -7,7 +7,6 @@ class App {
   authController = new AuthController();
 
   // client controllers
-
   commentsController = new CommentsController();
   fightsController = new FightsController();
 }
