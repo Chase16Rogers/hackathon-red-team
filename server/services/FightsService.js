@@ -2,6 +2,14 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class FightsService {
+  async deleteProfileFights(req) {
+    return await dbContext.Fights.find({ userId: req.params.id })
+  }
+
+  async getProfileFights(req) {
+    return await dbContext.Fights.find({ userId: req.userinfo.id })
+  }
+
   async getAll(query = {}) {
     return await dbContext.Fights.find(query)
   }
