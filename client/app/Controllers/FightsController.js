@@ -1,4 +1,5 @@
 import { ProxyState } from '../AppState.js'
+import { api } from '../Services/AxiosService.js'
 import fightsService from '../Services/FightsService.js'
 
 // drawfight
@@ -27,6 +28,7 @@ export default class FightsController {
   constructor() {
     ProxyState.on('activeFighterOne', _drawFighterOne)
     ProxyState.on('activeFighterOne', _drawFighterTwo)
+    this.getFighters()
   }
 
   getFighters() {
@@ -41,14 +43,12 @@ export default class FightsController {
     event.preventDefault()
     const form = event.target
     const fight = {
-      fighterOne: form.inputCharacterOne.value,
-      fighterOneURL: form.characteroneImage.value,
-      fighterTwo: form.inputCharacterTwo.value,
-      fighterTwoURL: form.charactertwoImage.value
+      fighterOne: [{ name: form.inputCharacterOne.value, img: form.characteroneImage.value }],
+      fighterTwo: [{ name: form.inputCharacterTwo.value, img: form.charactertwoImage.value }]
     }
     console.log(fight)
     try {
-      fightsService.createFight()
+      fightsService.createFight(fight)
     } catch (error) {
       console.error(error)
     }
@@ -75,6 +75,7 @@ export default class FightsController {
     console.log(offerName)
     const windowcontent = document.getElementsByClassName('windowcontent')
     for (i = 0; i < windowcontent.length; i++) {
+      // @ts-ignore
       windowcontent[i].style.display = 'none'
     }
 

@@ -1,18 +1,19 @@
 import { ProxyState } from '../AppState.js'
 import Fight from '../Models/Fight.js'
-import { api, supersApi } from './AxiosService.js'
+import { api } from './AxiosService.js'
 
 class FightsService {
   async getFighters() {
     console.log('Getting Fighters')
-    const res = await api.get('')
+    const res = await api.get('fights')
     ProxyState.fighters = res.data.map(f => new Fight(f))
+    console.log(res)
   }
 
-  async createFight() {
-    const res = await api.post('', ProxyState.fighters)
-    console.log(res)
-    ProxyState.fighters = [...ProxyState.fighters, new Fight(res.data)]
+  async createFight(fight) {
+    const res = await api.post('/fights', fight)
+    console.log(res.data.fighterOne)
+    ProxyState.fighters = [...ProxyState.fighters, new Fight(res.data.results)]
   }
 
   async editFight(fightId) {
