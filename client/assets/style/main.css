@@ -64,9 +64,14 @@ body {
   background-color: #f2f2f2;
   background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2016/07/15/996287/c79ea6163d67883e2d8c9c2a28dfc860-700.jpg);
   background-size: cover;
+  height: 100vh;
 }
-.opacityheader{
-  opacity: .6;
+
+header{
+  opacity: .5;
+}
+header:hover{
+  opacity: 1;
 }
 .fightcard{
 
@@ -3960,7 +3965,9 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  
 }
+
 .navbar .container,
 .navbar .container-fluid,
 .navbar .container-sm,
@@ -5481,7 +5488,9 @@ a.close.disabled {
   margin-bottom: 0;
   line-height: 1.5;
 }
-
+.navbar:hover{
+  opacity:1;
+}
 .modal-body {
   position: relative;
   flex: 1 1 auto;
@@ -9902,6 +9911,7 @@ h3 {
 
   .navbar {
     display: none;
+  
   }
 
   .badge {
