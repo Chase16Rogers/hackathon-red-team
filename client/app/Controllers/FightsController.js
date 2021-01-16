@@ -1,4 +1,5 @@
 import { ProxyState } from '../AppState.js'
+import { api } from '../Services/AxiosService.js'
 import fightsService from '../Services/FightsService.js'
 
 // drawfight
@@ -27,6 +28,7 @@ export default class FightsController {
   constructor() {
     ProxyState.on('activeFighterOne', _drawFighterOne)
     ProxyState.on('activeFighterOne', _drawFighterTwo)
+    this.getFighters()
   }
 
   getFighters() {

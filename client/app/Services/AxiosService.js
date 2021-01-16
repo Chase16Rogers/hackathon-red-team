@@ -7,6 +7,12 @@ export const api = axios.create({
   withCredentials: true
 })
 // @ts-ignore
+export const account = axios.create({
+  baseURL: 'https://hackathon-red.herokuapp.com/',
+  timeout: 3000,
+  withCredentials: true
+})
+// @ts-ignore
 export const supersApi = axios.create({
   baseURL: 'https://www.superheroapi.com/api.php/10217240308389867'
 })
