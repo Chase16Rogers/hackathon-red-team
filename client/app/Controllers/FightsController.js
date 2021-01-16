@@ -26,7 +26,11 @@ function _drawActiveOne() {
 }
 
 function _drawActiveTwo() {
-
+    let template = ''
+    if (ProxyState.activeFighterTwo) {
+        template = ProxyState.activeFighterTwo.Template
+    }
+    document.getElementById('activeTwo').innerHTML = template
 }
 
 export default class FightsController {
@@ -55,12 +59,22 @@ export default class FightsController {
     }
     try {
 
-    } catch (error) {
-
+    createFight(name) {
+        try {
+            fightsService.createFight(name)
+        } catch (error) {
+            console.error(error)
+        }
     }
   }
 
-  deleteFight() {
+    deleteFight() {
+        try {
+            fightsService.deleteFighter()
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
   }
 }
