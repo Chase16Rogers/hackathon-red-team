@@ -13,10 +13,11 @@ class AppState extends EventEmitter {
   /** @type {Comment[]} */
   comments = []
   /** @type {Fight[]} */
-  fighters = []
+  fights = []
   /** @type {Fight} */
   activeFighterOne = null
   activeFighterTwo = null
+
 }
 
 export const ProxyState = new Proxy(new AppState(), {

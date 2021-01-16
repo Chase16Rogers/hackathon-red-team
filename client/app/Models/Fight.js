@@ -41,7 +41,8 @@ export default class Fight {
         <img src="${this.fighterOneURL}" class="img-fluid" alt=""
             srcset="">
     </div>
-</div>`
+</div>
+`
     }
 
     //  function Vote() {
