@@ -1,22 +1,18 @@
-export default class Fight {
-  constructor(data) {
-    this.name = data.name
-    this.userId = data.userId
-    this.imgURL = data.imgURL
-    this.commentId = data.commentId
-    this.argument = data.arg
-    this.winvote = data.winvote
-    this.fighterOne = data.fighterOne[0].name
-    this.fighterTwo = data.fighterTwo[0].name
-    this.fighterOneURL = data.fighterOne[0].img
-    this.fighterTwoURL = data.fighterTwo[0].img
-    this.fighterOneVote = data.fighterOne[0].winvote
-    this.fighterTwoVote = data.fighterTwo[0].winvote
-    this.id = data._id
-  }
+import fightsService from "../Services/FightsService.js"
 
-  get Template() {
-    return /* html */`
+export default class Fight {
+    constructor(data) {
+        this.fighterOne = data.fights.fighterOne[0].name
+        this.fighterTwo = data.fights.fighterTwo[0].name
+        this.fighterOneURL = data.fight.fighterOne[0].img
+        this.fighterTwoURL = data.fight.fighterTwo[0].img
+        this.fighterOneVote = data.fight.fighterOne[0].winvote
+        this.fighterTwoVote = data.fight.fighterTwo[0].winvote
+        this.id = data._id
+    }
+
+    get Template() {
+        return /* html */`
     <div class="d-flex col-12 flex-row justify-content-center text-center">
     <div class="col-4 p-2 my-5 text-center">
         <h1 class="display-3 nameLine">${this.fighterOne}</h1>
@@ -46,11 +42,11 @@ export default class Fight {
             srcset="">
     </div>
 </div>`
-  }
+    }
 
-  //  function Vote() {
-  //     let up = 0
-  //     let down = 0
+    //  function Vote() {
+    //     let up = 0
+    //     let down = 0
 
-  // }
+    // }
 }
