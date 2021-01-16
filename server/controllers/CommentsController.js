@@ -33,6 +33,7 @@ export class CommentsController extends BaseController {
   async create(req, res, next) {
     try {
       req.body.userId = req.userInfo.id
+      req.body.userPic = req.userInfo.picture
       res.send(await commentsService.create(req))
     } catch (error) {
       next(error)

@@ -1,4 +1,5 @@
 import { dbContext } from '../db/DbContext'
+import { BadRequest } from '../utils/Errors'
 
 // Private Methods
 
@@ -46,9 +47,17 @@ function sanitizeBody(body) {
 }
 
 class AccountService {
-  async getAll(query = {}) {
-    return await dbContext.Account.find(query)
-  }
+  // async getOne(req) {
+  //   const getOne = await dbContext.Account.findById(req.params.id)
+  //   if (!getOne) {
+  //     throw new BadRequest('ERROR 404 no account with ID')
+  //   }
+  //   return getOne
+  // }
+
+  // async getAll(query = {}) {
+  //   return await dbContext.Account.find(query)
+  // }
 
   /**
    * Provided an array of user ids will return an array of user accounts with email picture and name

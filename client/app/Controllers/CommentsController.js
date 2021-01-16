@@ -1,3 +1,4 @@
+import { accountService } from '../../../server/services/AccountService.js'
 import { ProxyState } from '../AppState.js'
 import commentsService from '../Services/CommentsService.js'
 
@@ -15,6 +16,7 @@ export default class CommentsController {
     ProxyState.on('comment', _drawComments)
     commentsService.getComments()
     _drawComments()
+    accountService.getAccount()
   }
 
   getComments() {
