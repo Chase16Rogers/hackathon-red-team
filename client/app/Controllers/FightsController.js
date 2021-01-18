@@ -14,31 +14,31 @@ function _drawFights() {
   fights.forEach(fight => {
     template += fight.Template
   })
-  document.getElementById('fightCard').innerHTML = template
+  document.getElementById('fightListCards').innerHTML = template
 }
 
-function _drawFighterOne() {
-  console.log('drawing fighter ONE', ProxyState.activeFighterOne)
-  let template = ''
-  if (ProxyState.activeFighterOne) {
-    template = ProxyState.activeFighterOne.Template
-  }
-  document.getElementById('fighterOne').innerHTML = template
-}
+// function _drawFighterOne() {
+//   console.log('drawing fighter ONE', ProxyState.activeFighterOne)
+//   let template = ''
+//   if (ProxyState.activeFighterOne) {
+//     template = ProxyState.activeFighterOne.Template
+//   }
+//   document.getElementById('fighterOne').innerHTML = template
+// }
 
-function _drawFighterTwo() {
-  console.log('drawing fighter TWO', ProxyState.activeFighterTwo)
-  let template = ''
-  if (ProxyState.activeFighterTwo) {
-    template = ProxyState.activeFighterTwo.Template
-  }
-  document.getElementById('fighterTwo').innerHTML = template
-}
+// function _drawFighterTwo() {
+//   console.log('drawing fighter TWO', ProxyState.activeFighterTwo)
+//   let template = ''
+//   if (ProxyState.activeFighterTwo) {
+//     template = ProxyState.activeFighterTwo.Template
+//   }
+//   document.getElementById('fighterTwo').innerHTML = template
+// }
 
 export default class FightsController {
   constructor() {
-    ProxyState.on('activeFighterOne', _drawFighterOne)
-    ProxyState.on('activeFighterOne', _drawFighterTwo)
+    // ProxyState.on('activeFighterOne', _drawFighterOne)
+    // ProxyState.on('activeFighterOne', _drawFighterTwo)
     ProxyState.on('fight', _drawFights)
 
     this.getFighters()
@@ -47,6 +47,14 @@ export default class FightsController {
   getFighters() {
     try {
       fightsService.getFighters()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  getActiveFight(fightId) {
+    try {
+      fightsService.getActiveFight(fightId)
     } catch (error) {
       console.error(error)
     }

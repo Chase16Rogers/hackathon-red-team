@@ -3,6 +3,13 @@ import Fight from '../Models/Fight.js'
 import { api } from './AxiosService.js'
 
 class FightsService {
+  async getActiveFight(fightId) {
+    console.log(fightId)
+    const res = await api.get(fightId)
+    console.log(res.data)
+    ProxyState.activeFight = new Fight(res.data)
+  }
+
   async getFighters() {
     console.log('Getting Fighters')
     const res = await api.get('fights')
@@ -16,17 +23,17 @@ class FightsService {
     ProxyState.fights = [...ProxyState.fights, new Fight(res.data)]
   }
 
-  async editFight(fightId) {
-    const fight = ProxyState.fights.find(fight => fight.id == fightId)
-    console.log(fight)
-  }
+  // async editFight(fightId) {
+  //   const fight = ProxyState.fights.find(fight => fight.id == fightId)
+  //   console.log(fight)
+  // }
 
-  async deleteFight(id) {
-    const res = await api.delete(ProxyState.fights)
-    ProxyState.fights = ProxyState.fights.filter(f => f.id !== id)
-    ProxyState.activeFighterOne = null
-    ProxyState.activeFighterTwo = null
-  }
+  // async deleteFight(id) {
+  //   const res = await api.delete(ProxyState.fights)
+  //   ProxyState.fights = ProxyState.fights.filter(f => f.id !== id)
+  //   ProxyState.activeFighterOne = null
+  //   ProxyState.activeFighterTwo = null
+  // }
 }
 
 export const fightsService = new FightsService()

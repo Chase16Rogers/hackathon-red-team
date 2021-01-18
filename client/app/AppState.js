@@ -16,8 +16,6 @@ class AppState extends EventEmitter {
   fights = []
   /** @type {Fight} */
   activeFight = null
-  activeFighterOne = null
-  activeFighterTwo = null
   fight = null
 }
 
